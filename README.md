@@ -38,8 +38,8 @@ Original videos and annotations for each dataset are also available in the datas
 <div align="justify">
 
 Setup for the training process:
- - In [`data_loader.py`](model/data_loader.py), specify the [path to the h5 file of the used dataset](model/data_loader.py#L19:L20), and the [path to the JSON file containing data about the utilized data splits](model/data_loader.py#L21).
- - In [`configs.py`](model/configs.py), define the [directory](model/configs.py#L7) where the analysis results will be saved to. </div>
+ - In [`data_loader.py`](model/data_loader.py#L19:L21), specify the path to the h5 file of the used dataset, and the path to the JSON file containing data about the utilized data splits.
+ - In [`configs.py`](model/configs.py#L7), define the directory where the analysis results will be saved to. </div>
    
 Arguments in [`configs.py`](model/configs.py): 
 |Parameter name | Description | Default Value | Options
@@ -72,7 +72,7 @@ for sigma in $(seq 0.5 0.1 0.9); do
     python model/main.py --split_index N --n_epochs E --batch_size B --video_type 'dataset_name' --reg_factor '$sigma'
 done
 ```
-where, `N` refers to the index of the used data split, `E` refers to the number of training epochs, `B` refers to the batch size, `dataset_name` refers to the name of the used dataset, and `'$sigma'` refers to the valid values for the regularization factor hyperparameter.
+where, `N` refers to the index of the used data split, `E` refers to the number of training epochs, `B` refers to the batch size, `dataset_name` refers to the name of the used dataset, and `'$sigma'` refers to the valid values for the length regularization factor hyperparameter.
 
 Alternatively, to train the model for all 5 splits, use the [`run_summe_splits.sh`](model/run_summe_splits.sh) and/or [`run_tvsum_splits.sh`](model/run_tvsum_splits.sh) script and do the following:
 ```shell-script
@@ -90,10 +90,10 @@ The progress of the training can be monitored via the TensorBoard platform and b
 ## Model Selection and Evaluation 
 <div align="justify">
 
-The utilized model selection criterion relies on the post-processing of the calculated loss over the training epochs and enables the selection of a well-trained model by indicating the training epoch and the value of the length regularization factor. To evaluate the trained models of the architecture and automatically select a well-trained model, define:
+The utilized model selection criterion relies on the post-processing of the calculated loss over the training epochs and enables the selection of a well-trained model by indicating the training epoch and the value of the length regularization factor. To evaluate the trained models of the architecture and automatically select a well-trained one, define:
  - the [`dataset_path`](evaluation/compute_fscores.py#L25) in [`compute_fscores.py`](evaluation/compute_fscores.py),
  - the [`base_path`](evaluation/evaluate_factor.sh#L7) in [`evaluate_factor`](evaluation/evaluate_factor.sh),
- - the [`base_path`](evaluation/choose_best_model.py#L12) and [`annot_path`](evaluation/choose_best_model.py#L34) in [`choose_best_model`](evaluation/choose_best_model.py)
+ - the [`base_path`](evaluation/choose_best_model.py#L12) and [`annot_path`](evaluation/choose_best_model.py#L34) in [`choose_best_model`](evaluation/choose_best_model.py),
 
 and run [`evaluate_exp.sh`](evaluation/evaluate_exp.sh) via
 ```bash
