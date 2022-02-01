@@ -1,0 +1,4 @@
+# ignore files
+data/SumMe/eccv16_dataset_summe_google_pool5.h5
+data/TVSum/eccv16_dataset_tvsum_google_pool5.h5
+data/TVSum/annotations/ydata-anno.tsv

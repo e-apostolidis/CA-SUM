@@ -74,7 +74,7 @@ def get_config(parse=True, **optional_kwargs):
     parser.add_argument('--clip', type=float, default=5.0, help='Max norm of the gradients')
     parser.add_argument('--lr', type=float, default=5e-4, help='Learning rate used for the modules')
     parser.add_argument('--l2_req', type=float, default=1e-5, help='Weight regularization factor')
-    parser.add_argument('--reg_factor', type=float, default=0.6, help='Scores regularization factor')
+    parser.add_argument('--reg_factor', type=float, default=0.6, help='Length regularization factor')
     parser.add_argument('--split_index', type=int, default=0, help='Data split to be used [0-4]')
 
     if parse:
