@@ -31,7 +31,7 @@ Structured h5 files with the video features and annotations of the SumMe and TVS
     /video_name (optional)    original video name, only available for SumMe dataset
 ```
 Original videos and annotations for each dataset are also available in the dataset providers' webpages: 
-- <a href="https://github.com/yalesong/tvsum"><img src="https://img.shields.io/badge/Dataset-TVSum-green"/></a> <a href="https://gyglim.github.io/me/vsum/index.html#benchmark"><img src="https://img.shields.io/badge/Dataset-SumMe-blue"/></a>
+- <a href="https://github.com/yalesong/tvsum" target="_blank"><img align="center" src="https://img.shields.io/badge/Dataset-TVSum-green"/></a> <a href="https://gyglim.github.io/me/vsum/index.html#benchmark" target="_blank"><img align="center" src="https://img.shields.io/badge/Dataset-SumMe-blue"/></a>
 </div>
 
 ## Configurations
