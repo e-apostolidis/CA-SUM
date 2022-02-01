@@ -5,7 +5,7 @@
 
 - From **"CA-SUM: Summarizing videos using concentrated attention and considering the uniqueness and diversity of the video frames"**.
 - Written by Evlampios Apostolidis, Georgios Balaouras, Vasileios Mezaris and Ioannis Patras.
-</div>
+- This software can be used for training a deep learning architecture which estimates frames' importance by integrating a concentrated attention mechanism, able to focus on non-overlapping blocks in the main diagonal of the attention matrix, and simultaneously exploiting knowledge about the uniqueness and the diversity of the associated video frames. Training is performed in an unsupervised manner without knowledge of any ground-truth data. Finally, after being trained on a collection of videos, the CA-SUM model is capable of producing representative summaries for unseen videos, according to a user-specified time-budget about the summary duration. </div>
 
 ## Main dependencies
 Developed, checked and verified on an `Ubuntu 20.04.3` PC with an `NVIDIA RTX 2080Ti` GPU and an `i5-11600K` CPU. Main packages required:
@@ -72,7 +72,7 @@ for sigma in $(seq 0.5 0.1 0.9); do
     python model/main.py --split_index N --n_epochs E --batch_size B --video_type 'dataset_name' --reg_factor '$sigma'
 done
 ```
-where, `N` refers to the index of the used data split, `E` refers to the number of training epochs, `B` refers to the batch size, `dataset_name` refers to the name of the used dataset, and `'$sigma'` refers to the valid values for the length regularization factor hyperparameter.
+where, `N` refers to the index of the used data split, `E` refers to the number of training epochs, `B` refers to the batch size, `dataset_name` refers to the name of the used dataset, and `$sigma` refers to the valid values for the length regularization factor hyperparameter.
 
 Alternatively, to train the model for all 5 splits, use the [`run_summe_splits.sh`](model/run_summe_splits.sh) and/or [`run_tvsum_splits.sh`](model/run_tvsum_splits.sh) script and do the following:
 ```shell-script
@@ -99,9 +99,26 @@ and run [`evaluate_exp.sh`](evaluation/evaluate_exp.sh) via
 ```bash
 sh evaluation/evaluate_exp.sh '$exp_num' '$dataset' '$eval_method'
 ```
-where, `'$exp_num'` is the number of the current evaluated experiment, `'$dataset'` refers to the dataset being used, and `'$eval_method'` describe the used approach for computing the overall F-Score after comparing the generated summary with all the available user summaries (i.e., 'max' for SumMe and 'avg' for TVSum).
+where, `$exp_num` is the number of the current evaluated experiment, `$dataset` refers to the dataset being used, and `$eval_method` describe the used approach for computing the overall F-Score after comparing the generated summary with all the available user summaries (i.e., 'max' for SumMe and 'avg' for TVSum).
 
 For further details about the adopted structure of directories in our implementation, please check line [#7](evaluation/evaluate_factor.sh#L7) and line [#13](evaluation/evaluate_factor.sh#L13) of [`evaluate_factor.sh`](evaluation/evaluate_factor.sh). </div>
+
+## Trained models and Inference
+<div align="justify">
+
+We have released the [**`trained models`**](https://zenodo.org/) for our proposed method. The [`inference.py`](inference/inference.py) script, lets you evaluate the -reported- trained models, for our 5 randomly-created data splits. Firstly, download the trained models, with the following script:
+``` bash
+sudo apt-get install unzip wget
+wget "<add link>" -O pretrained_models.zip
+unzip pretrained_models.zip -d inference
+rm -f pretrained_models.zip
+```
+Then, specify the PATHs for the [`model`](inference/inference.py#L57), the [`split_file`](inference/inference.py#L61) and the [`dataset`](inference/inference.py#L67) in use. Finally, run the script with the following syntax
+```shell-script
+python inference/inference.py --dataset 'dataset_name'
+```
+where, `dataset_name` refers to the name of the used dataset.
+</div>
 
 ## Citation
 <div align="justify">
