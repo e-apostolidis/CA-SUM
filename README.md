@@ -103,6 +103,14 @@ where, `'$exp_num'` is the number of the current evaluated experiment, `'$datase
 
 For further details about the adopted structure of directories in our implementation, please check line [#7](evaluation/evaluate_factor.sh#L7) and line [#13](evaluation/evaluate_factor.sh#L13) of [`evaluate_factor.sh`](evaluation/evaluate_factor.sh). </div>
 
+## Citation
+<div align="justify">
+    
+If you find our work, code or pretrained models, useful in your work, please cite the following publication:
+
+E. Apostolidis, G. Balaouras, V. Mezaris, I. Patras, "<b>Summarizing videos using concentrated attention and considering the uniqueness and diversity of the video frames</b>", submitted for publication at ACM ICMR 2022.
+</div>
+
 ## License
 <div align="justify">
 
@@ -113,3 +121,6 @@ Copyright (c) 2022, Evlampios Apostolidis, Georgios Balaouras, Vasileios Mezaris
 
 This software is provided by the authors "as is" and any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. In no event shall the authors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.
 </div>
+
+## Acknowledgement
+<div align="justify"> This work was supported by the EU Horizon 2020 programme under grant agreement H2020-832921 MIRROR. </div>
