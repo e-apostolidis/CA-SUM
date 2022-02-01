@@ -1,4 +1,4 @@
-# CA-SUM: Summarizing videos using concentrated attention and considering the uniqueness and diversity of the video frames
+<h1><div align="justify"> CA-SUM: Summarizing &nbsp;videos &nbsp;using &nbsp;concentrated attention and considering the uniqueness and diversity of the video frames </div></h1>
 
 ## PyTorch Implementation of CA-SUM 
 <div align="justify">
