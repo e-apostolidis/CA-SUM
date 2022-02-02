@@ -90,7 +90,7 @@ The progress of the training can be monitored via the TensorBoard platform and b
 ## Model Selection and Evaluation 
 <div align="justify">
 
-The selection of a well-trained model is based on two step process. First, we keep one trained model per considered value for the length regularization factor sigma, by selecting the model (i.e., the epoch) that minimizes the training loss. Then, we choose the best-performing model for a given data split (i.e., the sigma value) by assessing the ability of each of the selected models to reduce the value of the utilized loss function for the videos of the test set. More details about this assessment can be found in Section 4.2 of our work. To evaluate the trained models of the architecture and automatically select a well-trained one, define:
+The selection of a well-trained model is based on a two-step process. First, we keep one trained model per considered value for the length regularization factor sigma, by selecting the model (i.e., the epoch) that minimizes the training loss. Then, we choose the best-performing model (i.e., the sigma value) for a given data split by assessing the ability of each of the selected models to reduce the value of the utilized loss function for the videos of the test set. More details about this assessment can be found in Section 4.2 of our work. To evaluate the trained models of the architecture and automatically select a well-trained one, define:
  - the [`dataset_path`](evaluation/compute_fscores.py#L25) in [`compute_fscores.py`](evaluation/compute_fscores.py),
  - the [`base_path`](evaluation/evaluate_factor.sh#L7) in [`evaluate_factor`](evaluation/evaluate_factor.sh),
  - the [`base_path`](evaluation/choose_best_model.py#L12) and [`annot_path`](evaluation/choose_best_model.py#L34) in [`choose_best_model`](evaluation/choose_best_model.py),
@@ -113,7 +113,7 @@ wget "<add link>" -O pretrained_models.zip
 unzip pretrained_models.zip -d inference
 rm -f pretrained_models.zip
 ```
-Then, specify the PATHs for the [`model`](inference/inference.py#L70), the [`split_file`](inference/inference.py#L74), the [`dataset`](inference/inference.py#L80) and the [`score annotations`](inference/evaluation_metrics.py#L54) in use. Finally, run the script with the following syntax
+Then, specify the PATHs for the [`model`](inference/inference.py#L70), the [`split_file`](inference/inference.py#L74), the [`dataset`](inference/inference.py#L80) and the [`annotations about the frames' importance`](inference/evaluation_metrics.py#L54) in use. Finally, run the script with the following syntax
 ```shell-script
 python inference/inference.py --dataset 'dataset_name'
 ```
