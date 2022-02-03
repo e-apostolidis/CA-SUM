@@ -113,7 +113,7 @@ wget "<add link>" -O pretrained_models.zip
 unzip pretrained_models.zip -d inference
 rm -f pretrained_models.zip
 ```
-Then, specify the PATHs for the [`model`](inference/inference.py#L70), the [`split_file`](inference/inference.py#L74), the [`dataset`](inference/inference.py#L80) and the [`annotations about the frames' importance`](inference/evaluation_metrics.py#L54) in use. Finally, run the script with the following syntax
+Then, specify the PATHs for the [`model`](inference/inference.py#L72), the [`split_file`](inference/inference.py#L76), the [`dataset`](inference/inference.py#L82) and the [`annotations about the frames' importance`](inference/evaluation_metrics.py#L54) in use. Finally, run the script with the following syntax
 ```shell-script
 python inference/inference.py --dataset 'dataset_name'
 ```

@@ -43,13 +43,13 @@ def inference(model, data_path, keys, eval_method):
             f_score = evaluate_summary(summary, user_summary, eval_method)
             video_fscores.append(f_score)
 
-            if dataset in eligible_datasets:
+            if dataset in eligible_datasets and corr_coef:
                 rho, tau = get_corr_coeff(pred_imp_scores=scores, video=video, dataset=dataset)
                 video_rho.append(rho)
                 video_tau.append(tau)
 
     print(f"CA-SUM model trained for split: {split_id} achieved an F-score: {np.mean(video_fscores):.2f}%", end="")
-    if dataset not in eligible_datasets:
+    if dataset not in eligible_datasets or not corr_coef:
         print("\n", end="")
     else:
         print(f", a Spearman's \u03C1: {np.mean(video_rho):.3f}  and a Kendall's \u03C4: {np.mean(video_tau):.3f}")
@@ -60,9 +60,11 @@ if __name__ == "__main__":
     # arguments to run the script
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", type=str, default='SumMe', help="Dataset to be used. Supported: {SumMe, TVSum}")
+    parser.add_argument("--corr_coef", type=bool, default=False, help="Calculate or not, the correlation coefficients")
 
     args = vars(parser.parse_args())
     dataset = args["dataset"]
+    corr_coef = args["corr_coef"]
 
     eval_metric = 'avg' if dataset.lower() == 'tvsum' else 'max'
     for split_id in range(5):
