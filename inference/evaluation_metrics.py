@@ -51,7 +51,7 @@ def get_corr_coeff(pred_imp_scores, video, dataset):
     """
 
     # Read the user annotations from the file
-    annot_path = f".../CA-SUM/data/{dataset}/annotations/ydata-anno.tsv"
+    annot_path = f".../CA-SUM/data/{dataset}/ydata-anno.tsv"
     with open(annot_path) as annot_file:
         user = int(video.split("_")[-1])
 
