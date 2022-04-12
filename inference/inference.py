@@ -13,6 +13,20 @@ import argparse
 eligible_datasets = ["TVSum"]
 
 
+def str2bool(v):
+    """ Transcode string to boolean.
+
+    :param str v: String to be transcoded.
+    :return: The boolean transcoding of the string.
+    """
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
+
+
 def inference(model, data_path, keys, eval_method):
     """ Used to inference a pretrained `model` on the `keys` test videos, based on the `eval_method` criterion; using
         the dataset located in `data_path'.
@@ -60,7 +74,7 @@ if __name__ == "__main__":
     # arguments to run the script
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", type=str, default='SumMe', help="Dataset to be used. Supported: {SumMe, TVSum}")
-    parser.add_argument("--corr_coef", type=bool, default=False, help="Calculate or not, the correlation coefficients")
+    parser.add_argument("--corr_coef", type=str2bool, default=False, help="Calculate or not, the correlation coefficients")
 
     args = vars(parser.parse_args())
     dataset = args["dataset"]
