@@ -1,9 +1,9 @@
-# CA-SUM: Summarizing videos using concentrated attention and considering the uniqueness and diversity of the video frames
+# CA-SUM: Summarizing Videos using Concentrated Attention and Considering the Uniqueness and Diversity of the Video Frames
 
 ## PyTorch Implementation of CA-SUM 
 <div align="justify">
 
-- From **"CA-SUM: Summarizing videos using concentrated attention and considering the uniqueness and diversity of the video frames"**.
+- From **"CA-SUM: Summarizing Videos using Concentrated Attention and Considering the Uniqueness and Diversity of the Video Frames"**.
 - Written by Evlampios Apostolidis, Georgios Balaouras, Vasileios Mezaris and Ioannis Patras.
 - This software can be used for training a deep learning architecture which estimates frames' importance by integrating a concentrated attention mechanism and utilizing information about the frames' uniqueness and diversity. The integated mechanism is able to focus on non-overlapping blocks in the main diagonal of the attention matrix and make better estimates about the significance of different parts of the video by considering the uniqueness and diversity of the associated frames. Training is performed in an unsupervised manner without knowledge of any ground-truth data. Finally, after being trained on a collection of videos, the CA-SUM model is capable of producing summaries for unseen videos, according to a user-specified time-budget about the summary duration. </div>
 
