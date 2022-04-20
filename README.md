@@ -125,7 +125,7 @@ where, `dataset_name` refers to the name of the used dataset.
     
 If you find our work, code or pretrained models, useful in your work, please cite the following publication:
 
-E. Apostolidis, G. Balaouras, V. Mezaris, I. Patras, "<b>Summarizing videos using concentrated attention and considering the uniqueness and diversity of the video frames</b>", submitted for publication at ACM ICMR 2022.
+E. Apostolidis, G. Balaouras, V. Mezaris, I. Patras, "<b>Summarizing Videos using Concentrated Attention and Considering the Uniqueness and Diversity of the Video Frames</b>", Proc. of the 2022 Int. Conf. on Multimedia Retrieval (ICMR ’22), June 2022, Newark, NJ, USA.
 </div>
 
 ## License
@@ -140,4 +140,4 @@ This software is provided by the authors "as is" and any express or implied warr
 </div>
 
 ## Acknowledgement
-<div align="justify"> This work was supported by the EU Horizon 2020 programme under grant agreement H2020-832921 MIRROR. </div>
+<div align="justify"> This work was supported by the EU Horizon 2020 programme under grant agreements H2020-832921 MIRROR and H2020-951911 AI4Media. </div>
