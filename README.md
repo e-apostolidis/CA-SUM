@@ -5,7 +5,7 @@
 
 - From **"Summarizing Videos using Concentrated Attention and Considering the Uniqueness and Diversity of the Video Frames"**.
 - Written by Evlampios Apostolidis, Georgios Balaouras, Vasileios Mezaris and Ioannis Patras.
-- This software can be used for training a deep learning architecture which estimates frames' importance by integrating a concentrated attention mechanism and utilizing information about the frames' uniqueness and diversity. The integated mechanism is able to focus on non-overlapping blocks in the main diagonal of the attention matrix and make better estimates about the significance of different parts of the video by considering the uniqueness and diversity of the associated frames. Training is performed in an unsupervised manner without knowledge of any ground-truth data. Finally, after being trained on a collection of videos, the CA-SUM model is capable of producing summaries for unseen videos, according to a user-specified time-budget about the summary duration. </div>
+- This software can be used for training a deep learning architecture which estimates frames' importance by integrating a concentrated attention mechanism and utilizing information about the frames' uniqueness and diversity. The integrated mechanism is able to focus on non-overlapping blocks in the main diagonal of the attention matrix and make better estimates about the significance of different parts of the video by considering the uniqueness and diversity of the associated frames. Training is performed in an unsupervised manner without knowledge of any ground-truth data. Finally, after being trained on a collection of videos, the CA-SUM model is capable of producing summaries for unseen videos, according to a user-specified time-budget about the summary duration. </div>
 
 ## Main dependencies
 Developed, checked and verified on an `Ubuntu 20.04.3` PC with an `NVIDIA RTX 2080Ti` GPU and an `i5-11600K` CPU. Main packages required:
@@ -113,7 +113,7 @@ wget "<add link>" -O pretrained_models.zip
 unzip pretrained_models.zip -d inference
 rm -f pretrained_models.zip
 ```
-Then, specify the PATHs for the [`model`](inference/inference.py#L72), the [`split_file`](inference/inference.py#L76), the [`dataset`](inference/inference.py#L82) and the [`annotations about the frames' importance`](inference/evaluation_metrics.py#L54) in use. Finally, run the script with the following syntax
+Then, specify the PATHs for the [`model`](inference/inference.py#L86), the [`split_file`](inference/inference.py#L90), the [`dataset`](inference/inference.py#L96) and the [`annotations about the frames' importance`](inference/evaluation_metrics.py#L54) in use. Finally, run the script with the following syntax
 ```shell-script
 python inference/inference.py --dataset 'dataset_name'
 ```
