@@ -106,10 +106,10 @@ For further details about the adopted structure of directories in our implementa
 ## Trained models and Inference
 <div align="justify">
 
-We have released the [**`trained models`**](https://zenodo.org/) for our proposed method. The [`inference.py`](inference/inference.py) script, lets you evaluate the -reported- trained models, for our 5 randomly-created data splits. Firstly, download the trained models, with the following script:
+We have released the [**`trained models`**]([https://zenodo.org/](https://doi.org/10.5281/zenodo.6562992)) for our proposed method. The [`inference.py`](inference/inference.py) script, lets you evaluate the -reported- trained models, for our 5 randomly-created data splits. Firstly, download the trained models, with the following script:
 ``` bash
 sudo apt-get install unzip wget
-wget "<add link>" -O pretrained_models.zip
+wget "https://zenodo.org/record/6562992/files/icmr22_zenodo_pretrained_models.zip?download=1" -O pretrained_models.zip
 unzip pretrained_models.zip -d inference
 rm -f pretrained_models.zip
 ```
