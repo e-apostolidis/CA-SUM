@@ -1,6 +1,6 @@
 # Summarizing Videos using Concentrated Attention and Considering the Uniqueness and Diversity of the Video Frames
 
-## PyTorch Implementation of CA-SUM 
+## PyTorch Implementation of CA-SUM [[Paper](https://www.iti.gr/~bmezaris/publications/icmr2022_preprint.pdf)] [[DOI](https://doi.org/10.1145/3512527.3531404)] [[Cite](https://github.com/e-apostolidis/CA-SUM#citation)]
 <div align="justify">
 
 - From **"Summarizing Videos using Concentrated Attention and Considering the Uniqueness and Diversity of the Video Frames"**.
@@ -127,6 +127,26 @@ If you find our work, code or pretrained models, useful in your work, please cit
 
 E. Apostolidis, G. Balaouras, V. Mezaris, I. Patras, "<b>Summarizing Videos using Concentrated Attention and Considering the Uniqueness and Diversity of the Video Frames</b>", Proc. of the 2022 Int. Conf. on Multimedia Retrieval (ICMR ’22), June 2022, Newark, NJ, USA.
 </div>
+
+BibTeX:
+
+```
+@inproceedings{10.1145/3512527.3531404,
+author = {Apostolidis, Evlampios and Balaouras, Georgios and Mezaris, Vasileios and Patras, Ioannis},
+title = {Summarizing Videos Using Concentrated Attention and Considering the Uniqueness and Diversity of the Video Frames},
+year = {2022},
+isbn = {9781450392389},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3512527.3531404},
+doi = {10.1145/3512527.3531404},
+pages = {407-415},
+numpages = {9},
+keywords = {frame diversity, frame uniqueness, concentrated attention, unsupervised learning, video summarization},
+location = {Newark, NJ, USA},
+series = {ICMR '22}
+}
+```
 
 ## License
 <div align="justify">
